@@ -1,0 +1,32 @@
+Name:                kanbanTracker
+Version:             0.1
+Synopsis:            Simple Kanban task tracker
+Description:         Simple Kanban task tracker
+License:             AllRightsReserved
+Author:              Keegan Myers
+Maintainer:          keeganmyers608@gmail.com
+Stability:           Experimental
+Category:            Web
+Build-type:          Simple
+Cabal-version:       >=1.2
+
+Executable kanbanTracker
+  hs-source-dirs: src
+  main-is: Main.hs
+
+  Build-depends:
+    base                      >= 4     && < 5,
+    bytestring                >= 0.9.1 && < 0.11,
+    MonadCatchIO-transformers >= 0.2.1 && < 0.4,
+    mtl                       >= 2     && < 3,
+    snap-core                 >= 0.9   && < 0.10,
+    snap-server               >= 0.9   && < 0.10,
+    rethinkdb                 >= 1.14  && < 1.16,
+    aeson                     >= 0.7   && < 0.8,
+    lens                      >= 4.4   && < 4.8
+
+  if impl(ghc >= 6.12.0)
+    ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
+                 -fno-warn-unused-do-bind
+  else
+    ghc-options: -threaded -Wall -fwarn-tabs -funbox-strict-fields -O2
