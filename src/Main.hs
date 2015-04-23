@@ -3,6 +3,7 @@ module Main where
 
 import           Control.Applicative
 import           Snap.Core
+import           Model.Story
 import           Snap.Util.FileServe
 import           Snap.Http.Server
 
